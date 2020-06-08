@@ -1,12 +1,12 @@
-import { HttpPostCLient } from '../../protocols/http/http-post-client'
+import { HttpPostCLient } from "../../protocols/http/http-post-client";
 
-export class RometeAuthentication {
+export class RemoteAuthentication {
   constructor (
     private readonly url: string,
     private readonly httpPostCLiente: HttpPostCLient
   ) {}
 
   async auth (): Promise<void> {
-    await this.httpPostCLiente.post(this.url)
+    await this.httpPostCLiente.post(this.url);
   }
 }
