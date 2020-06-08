@@ -2,7 +2,7 @@
 // eslint-disable-next-line semi
 import { AccountModel } from "../models/acocount-model";
 
-type AuthenticationPrams = {
+export type AuthenticationPrams = {
   email: string;
   password: string;
 };
