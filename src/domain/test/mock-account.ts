@@ -1,7 +1,8 @@
-import { AuthenticationPrams } from '../useCases/authentication'
+import { AuthenticationPrams } from '../useCases'
 
 import faker from 'faker'
-import { AccountModel } from '../models/acocount-model'
+import { AccountModel } from '../models'
+
 export const mockAuthentication = (): AuthenticationPrams => ({
   email: faker.internet.email(),
   password: faker.internet.password()
