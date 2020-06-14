@@ -17,7 +17,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.ts(x?)$/,
-      loader: 'ts-loaders',
+      loader: 'ts-loader',
       exclude: /node_modules/
     }, {
       test: /\.scss$/,
@@ -43,7 +43,9 @@ module.exports = {
   },
   externals: {
     react: 'React',
-    'react-dom': 'ReacDom'
+
+    'react-dom': 'ReactDOM'
+
   },
   plugins: [
     new CleanWebpackPlugin()

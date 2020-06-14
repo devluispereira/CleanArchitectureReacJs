@@ -1,9 +1,8 @@
 import React from 'react';
+import { render } from 'react-dom'
+import Login from './presentation/pages/Login/login'
 
-// import { Container } from './styles';
-
-const main: React.FC = () => {
-  return <div />;
-}
-
-export default main;
+render(
+  <Login></Login>,
+  document.getElementById('main')
+)
