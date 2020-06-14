@@ -1,0 +1,44 @@
+$white: #fff;
+$black: #111;
+$background: #f2f2f2;
+$primary: #880e4f;
+$primaryDark: #560027;
+$primaryLight: #bc477b;
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  background: $background;
+}
+
+input[type="password"],
+input[type="email"] {
+  border: 1px solid $primaryLight;
+  line-height: 40px;
+  border-radius: 4px;
+  width: 300px;
+  position: relative;
+  left: 10px;
+  &:focus {
+    outline-color: $primaryLight;
+  }
+}
+
+button {
+  background-color: $primary;
+  color: $white;
+  border-radius: 8px;
+  font-size: 16px;
+  border: none;
+  height: 60px !important;
+  width: 300px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

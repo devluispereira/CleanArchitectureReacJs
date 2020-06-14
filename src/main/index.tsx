@@ -1,8 +1,5 @@
-import React from 'react';
-import { render } from 'react-dom'
-import Login from './presentation/pages/Login/login'
+import React from "react";
+import { render } from "react-dom";
+import Routes from "@/presentation/Router/router";
 
-render(
-  <Login></Login>,
-  document.getElementById('main')
-)
+render(<Routes />, document.getElementById("main"));

@@ -1,0 +1,11 @@
+@import "../../styles/colors.scss";
+
+.inputWrap {
+  margin-top: 16px;
+
+  .status {
+    position: relative;
+    right: 10px;
+    cursor: help;
+  }
+}
