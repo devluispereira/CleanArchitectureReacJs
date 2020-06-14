@@ -5,14 +5,14 @@ import Styles from "./styles.scss";
 import ContextForm from '@/presentation/contexts/form/form-context'
 
 const FormStatus: React.FC = () => {
-  const { state: { loading }, errorState: { errorMessage } } = useContext(ContextForm)
+  const { state: { loading, errorMessage } } = useContext(ContextForm)
 
   return (
     <div data-testid='errorWrap' className={Styles.errorWrap}>
       {
         loading && <Spinner className={Styles.spinner} />
       }
-      {errorMessage && <span className={Styles.error}>Error</span>}
+      {errorMessage && <span className={Styles.error}>{errorMessage}</span>}
     </div>
   );
 };

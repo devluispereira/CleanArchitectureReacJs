@@ -1,23 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./login-styles.scss";
 
 import { LoginHeader, Footer, FormStatus, Input } from "../../components";
 import ContextForm from '@/presentation/contexts/form/form-context'
+import { Validation } from "@/presentation/protocols/validation";
 
-const Login: React.FC = () => {
-  const [state] = useState({
-    loading: false
+type LoginProps={
+  validation: Validation
+}
 
-  })
-  const [errorState] = useState({
-    email: 'Campo Obrigatório',
-    password: 'Campo Obrigatório',
+// eslint-disable-next-line react/prop-types
+const Login: React.FC<LoginProps> = ({ validation }) => {
+  const [state, setState] = useState({
+    loading: false,
+    email: "",
+    password: '',
+    emailError: 'Campo Obrigatório',
+    passwordError: 'Campo Obrigatório',
     errorMessage: ''
+
   })
+
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    validation.validate({ email: state.email })
+  }, [state.email])
+
+  useEffect(() => {
+    // eslint-disable-next-line react/prop-types
+    validation.validate({ password: state.password })
+  }, [state.password])
+
   return (
     <div className={Styles.login}>
       <LoginHeader />
-      <ContextForm.Provider value={{ state, errorState }}>
+      <ContextForm.Provider value={{ state, setState }}>
 
         <form className={Styles.form} action="">
           <h2>Login</h2>
