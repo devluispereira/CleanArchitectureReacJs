@@ -23,12 +23,12 @@ const Login: React.FC<LoginProps> = ({ validation }) => {
 
   useEffect(() => {
     // eslint-disable-next-line react/prop-types
-    validation.validate({ email: state.email })
+    validation.validate('email', state.email)
   }, [state.email])
 
   useEffect(() => {
     // eslint-disable-next-line react/prop-types
-    validation.validate({ password: state.password })
+    validation.validate('password', state.password)
   }, [state.password])
 
   return (
